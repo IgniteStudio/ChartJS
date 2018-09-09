@@ -12,7 +12,7 @@
     <div class="container">
         <canvas id="myChart"></canvas>
     </div>
-    <!-- Simple bar Chart-->
+    
     <script>
         let myChart = document.getElementById('myChart').getContext('2d');
         
@@ -22,7 +22,7 @@
         Chart.defaults.global.defaultFontColor = '#777';
 
         let massPopChart = new Chart(myChart, {
-            type: 'horizontalBar',
+            type: 'polarArea', // bar, horizontalBar, pie, radar, polarArea, doughnut
             data: {
                 labels: ['Toronto', 'Mississauga', 'Brampton'],
                 datasets: [{
@@ -63,7 +63,6 @@
                 tooltips:{
                     enabled: true
                 }
-
             }
         })
     </script>
