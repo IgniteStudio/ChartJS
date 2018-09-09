@@ -22,7 +22,7 @@
         Chart.defaults.global.defaultFontColor = '#777';
 
         let massPopChart = new Chart(myChart, {
-            type: 'pie',
+            type: 'horizontalBar',
             data: {
                 labels: ['Toronto', 'Mississauga', 'Brampton'],
                 datasets: [{
@@ -46,7 +46,7 @@
                     fontSize: 25
                 },
                 legend:{
-                    display: false,
+                    display: true,
                     position: 'right',
                     labels:{
                         fontColor: '#000' 
