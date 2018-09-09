@@ -9,6 +9,63 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.2/Chart.bundle.js"></script>
 </head>
 <body>
-    
+    <div class="container">
+        <canvas id="myChart"></canvas>
+    </div>
+    <!-- Simple bar Chart-->
+    <script>
+        let myChart = document.getElementById('myChart').getContext('2d');
+        
+        // Global Options
+        Chart.defaults.global.defaultFontFamily = 'Lato';
+        Chart.defaults.global.defaultFontSize = 18;
+        Chart.defaults.global.defaultFontColor = '#777';
+
+        let massPopChart = new Chart(myChart, {
+            type: 'pie',
+            data: {
+                labels: ['Toronto', 'Mississauga', 'Brampton'],
+                datasets: [{
+                    label: 'Population',
+                    data: [3500000, 1500000, 800000],
+                    backgroundColor: [
+                        'rgba(255, 99, 132, 0.6)',
+                        'rgba(54, 162, 235, 0.6)',
+                        'rgba(255, 205, 86, 0.6)'
+                    ],
+                    borderWidth: 1,
+                    borderColor: '#777',
+                    hoverBorderWidth: 3,
+                    hoverBorderColor: '#000'
+                }]
+            },
+            options: {
+                title:{
+                    display: true,
+                    text: 'Largest Cities in Ontario',
+                    fontSize: 25
+                },
+                legend:{
+                    display: false,
+                    position: 'right',
+                    labels:{
+                        fontColor: '#000' 
+                    }
+                },
+                layout:{
+                    padding:{
+                        left: 50,
+                        right: 0,
+                        bottom: 0,
+                        top: 0
+                    }
+                },
+                tooltips:{
+                    enabled: true
+                }
+
+            }
+        })
+    </script>
 </body>
 </html>
